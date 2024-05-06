@@ -1,3 +1,5 @@
+using Probny_Kolos.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +8,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // Dodawanie kontorlerów
 builder.Services.AddControllers();
+builder.Services.AddScoped<IAnimalsRepository, AnimalsRepository>();
 
 var app = builder.Build();
 
